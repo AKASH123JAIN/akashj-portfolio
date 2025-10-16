@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Angular Material theme - import first */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+main { padding: 16px; }
+
+.skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.experience-item { margin-bottom: 12px; }

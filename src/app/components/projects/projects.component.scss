@@ -1,0 +1,30 @@
+/* src/app/components/projects/projects.component.css */
+.projects-content {
+  padding: 2rem;
+}
+
+.projects-content h2 {
+  color: #667eea;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .project-card {
+  background: #3a3a3a;
+  color: #ddd;
+}

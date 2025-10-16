@@ -1,0 +1,17 @@
+<!-- src/app/components/experience/experience.component.html -->
+<div class="experience-content">
+    <h2>Work Experience</h2>
+    <div class="timeline">
+      <mat-card *ngFor="let exp of experiences" class="experience-item">
+        <mat-card-header>
+          <mat-card-title>{{ exp.title }} • {{ exp.company }}</mat-card-title>
+          <mat-card-subtitle class="period">{{ exp.period }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li *ngFor="let desc of exp.description">{{ desc }}</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

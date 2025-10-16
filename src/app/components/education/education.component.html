@@ -1,0 +1,12 @@
+<!-- src/app/components/education/education.component.html -->
+<div class="education-content">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>{{ education.degree }}</h3>
+      <p>{{ education.college }} • {{ education.period }}</p>
+    </div>
+    <h2>Achievements</h2>
+    <ul>
+      <li *ngFor="let ach of achievements">{{ ach }}</li>
+    </ul>
+  </div>

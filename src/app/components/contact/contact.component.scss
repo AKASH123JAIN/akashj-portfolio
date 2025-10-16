@@ -1,0 +1,36 @@
+/* src/app/components/contact/contact.component.css */
+.contact-content {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .contact-content h2, .contact-content h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .contact-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .contact-content li {
+    background: #e9ecef;
+    padding: 0.75rem;
+    border-radius: 4px;
+  }

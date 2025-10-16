@@ -1,0 +1,31 @@
+/* src/app/components/skills/skills.component.css */
+.skills-content {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .skills-content h2 {
+    color: #667eea;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .skill-chip {
+    background: #667eea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    display: inline-block;
+  }
+
+  .skill-chip:hover {
+    background: #764ba2;
+  }
