@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:gh-pages": "ng build --configuration production --base-href /akashj-portfolio/ --output-path=dist/akash-portfolio",
+    "build:gh-pages": "ng build --configuration production --base-href /akashj-portfolio/ --output-path=dist/akash-portfolio --delete-output-path",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

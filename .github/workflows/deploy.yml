@@ -37,6 +37,11 @@ jobs:
       - name: Build
         run: npm run build:gh-pages
 
+      - name: Debug dist contents
+        run: |
+          echo "Contents of dist/akash-portfolio:"
+          ls -la dist/akash-portfolio
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
