@@ -3,12 +3,17 @@
   <mat-toolbar color="primary" class="navbar">
     <span class="nav-brand">Akash Jain</span>
     <span class="spacer"></span>
-    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
-    <a mat-button routerLink="/experience" routerLinkActive="active">Experience</a>
-    <a mat-button routerLink="/projects" routerLinkActive="active">Projects</a>
-    <a mat-button routerLink="/skills" routerLinkActive="active">Skills</a>
-    <a mat-button routerLink="/education" routerLinkActive="active">Education</a>
-    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+    <div class="nav-links">
+      <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+      <a mat-button routerLink="/experience" routerLinkActive="active">Experience</a>
+      <a mat-button routerLink="/projects" routerLinkActive="active">Projects</a>
+      <a mat-button routerLink="/skills" routerLinkActive="active">Skills</a>
+      <a mat-button routerLink="/education" routerLinkActive="active">Education</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a mat-icon-button href="https://github.com/AKASH123JAIN" target="_blank" aria-label="GitHub Profile">
+        <img src="assets/github-mark-white.png" alt="GitHub" style="width: 24px; height: 24px;">
+      </a>
+    </div>
     <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme">
       <mat-icon>{{ darkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
@@ -16,19 +21,19 @@
 
   <header class="hero-header" [@fadeIn]>
     <div class="hero-content">
-      <img 
-        src="assets/profile.jpg" 
-        alt="Akash Jain" 
-        class="profile-img"
-        (error)="handleImageError($event)"
+      <img src="assets/profile.jpg" alt="Akash Jain" class="profile-img" (error)="handleImageError($event)"
         loading="lazy">
       <h1>Senior Software Engineer</h1>
-      <p>Proactively transduces legacy systems to modern architectures using AWS Lambda and serverless frameworks, facilitating high-response collaboration with cross-functional partners.</p>
-      <p class="location">Greensboro, North Carolina (USA) | +1 (332) 260-4556</p>
+      <p>Proactively transforming legacy systems to modern architectures using AWS Lambda and serverless frameworks,
+        facilitating seamless collaboration with cross-functional partners.</p>
+      <p class="location">
+        <mat-icon>location_on</mat-icon> Greensboro, North Carolina (USA) |
+        <mat-icon>phone</mat-icon> +1 (332) 260-4556
+      </p>
     </div>
   </header>
 
-  <main>
+  <main class="glass-panel">
     <router-outlet></router-outlet>
   </main>
 

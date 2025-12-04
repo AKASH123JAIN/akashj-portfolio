@@ -1,36 +1,68 @@
-/* src/app/components/contact/contact.component.css */
+/* src/app/components/contact/contact.component.scss */
 .contact-content {
-    padding: 2rem;
-    text-align: center;
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-content h2,
+.contact-content h3 {
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+
+  p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+
+    strong {
+      color: #94a3b8;
+      margin-right: 8px;
+    }
+
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #93c5fd;
+        text-decoration: underline;
+      }
+    }
   }
-  
-  .contact-content h2, .contact-content h3 {
-    color: #667eea;
-    margin-bottom: 1rem;
+}
+
+.contact-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-content li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: #60a5fa;
   }
-  
-  .contact-info {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-  }
-  
-  .contact-info p {
-    margin: 0.5rem 0;
-  }
-  
-  .contact-content ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  
-  .contact-content li {
-    background: #e9ecef;
-    padding: 0.75rem;
-    border-radius: 4px;
-  }
+}

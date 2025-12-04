@@ -1,11 +1,12 @@
 // src/app/components/education/education.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss']
 })
@@ -17,7 +18,28 @@ export class EducationComponent {
   };
 
   achievements = [
-    'AWS Solution Architect Certified',
-    'AWS AI Engineer Certified'
+    {
+      name: 'AWS Solution Architect Certified',
+      issuer: 'Amazon Web Services',
+      link: 'https://www.credly.com/earner/earned/badge/dd485d03-6d51-4d4b-8609-548c7656862e',
+      logoUrl: 'assets/aws-sa.jpg'
+    },
+    {
+      name: 'AWS AI Practitioner Certified',
+      issuer: 'Amazon Web Services',
+      link: 'https://www.credly.com/earner/earned/badge/5fcfdc6c-123d-45b9-90c3-744bfde8a6da',
+      logoUrl: 'assets/aws-ai.jpg'
+    },
+    {
+      name: 'Github Copilot Certified',
+      issuer: 'GitHub',
+      link: 'https://www.credly.com/earner/earned/badge/195ad764-afa5-4bb3-b294-b1cc707c602f',
+      logoUrl: 'assets/github-copilot.jpg'
+    }
   ];
+
+  handleImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    img.style.display = 'none';
+  }
 }
