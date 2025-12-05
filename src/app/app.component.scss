@@ -101,6 +101,12 @@
   animation: slideUp 0.8s ease-out;
 }
 
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
 .profile-img {
   width: 180px;
   height: 180px;
@@ -108,12 +114,38 @@
   object-fit: cover;
   border: 4px solid rgba(96, 165, 250, 0.5);
   box-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
-  margin-bottom: 2rem;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
 
   &:hover {
     transform: scale(1.08) rotate(2deg);
     border-color: #a78bfa;
+  }
+}
+
+.linkedin-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 10;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 

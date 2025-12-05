@@ -21,8 +21,14 @@
 
   <header class="hero-header" [@fadeIn]>
     <div class="hero-content">
-      <img src="assets/profile.jpg" alt="Akash Jain" class="profile-img" (error)="handleImageError($event)"
-        loading="lazy">
+      <div class="profile-wrapper">
+        <img src="assets/profile.jpg" alt="Akash Jain" class="profile-img" (error)="handleImageError($event)"
+          loading="lazy">
+        <a href="https://www.linkedin.com/in/akash-jain-73b371105/" target="_blank" class="linkedin-badge"
+          aria-label="LinkedIn Profile">
+          <img src="assets/linkedin.png" alt="LinkedIn">
+        </a>
+      </div>
       <h1>Senior Software Engineer</h1>
       <p>Results-driven Senior Software Engineer experienced in creating innovative solutions to tackle
         productivity challenges. Skilled at navigating complex issues with a flexible, resourceful approach and
