@@ -1,12 +1,161 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', Roboto, "Helvetica Neue", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #0f172a;
+  color: var(--text-primary);
+}
+
+body.light-mode {
+  background-color: #f8fafc;
+}
 
 /* Angular Material theme - import first */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-main { padding: 16px; }
+main {
+  padding: 16px;
+}
 
-.skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-.experience-item { margin-bottom: 12px; }
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-item {
+  margin-bottom: 12px;
+}
+
+/* ===== Theme CSS Variables ===== */
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --bg-navbar: rgba(15, 23, 42, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-footer: rgba(15, 23, 42, 0.95);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-chip: rgba(255, 255, 255, 0.06);
+  --bg-chip-hover: rgba(96, 165, 250, 0.2);
+  --bg-icon: rgba(96, 165, 250, 0.12);
+
+  --text-primary: #f8fafc;
+  --text-heading: #60a5fa;
+  --text-title: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-chip: #f1f5f9;
+  --text-link: #60a5fa;
+  --text-link-hover: #93c5fd;
+
+  --border-card: rgba(255, 255, 255, 0.08);
+  --border-card-hover: #60a5fa;
+  --border-navbar: rgba(255, 255, 255, 0.08);
+  --border-footer: rgba(255, 255, 255, 0.08);
+  --border-chip: rgba(255, 255, 255, 0.12);
+  --border-accent: #60a5fa;
+  --border-accent-alt: #a78bfa;
+  --border-heading: rgba(96, 165, 250, 0.3);
+
+  --profile-border: rgba(96, 165, 250, 0.5);
+  --profile-glow: rgba(96, 165, 250, 0.3);
+
+  --hero-h1-gradient: linear-gradient(to right, #ffffff, #cbd5e1);
+
+  --github-filter: none;
+  --icon-color: #cbd5e1;
+}
+
+body.light-mode {
+  /* Light Theme - Deep rich contrast for 100% readability */
+  --bg-primary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  --bg-navbar: rgba(255, 255, 255, 0.95);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-footer: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-chip: #ffffff;
+  --bg-chip-hover: rgba(37, 99, 235, 0.1);
+  --bg-icon: rgba(37, 99, 235, 0.1);
+
+  --text-primary: #0f172a;
+  --text-heading: #1d4ed8;
+  --text-title: #0f172a;
+  --text-body: #1e293b;
+  --text-muted: #334155;
+  --text-dim: #475569;
+  --text-chip: #0f172a;
+  --text-link: #1d4ed8;
+  --text-link-hover: #2563eb;
+
+  --border-card: rgba(0, 0, 0, 0.12);
+  --border-card-hover: #1d4ed8;
+  --border-navbar: rgba(0, 0, 0, 0.1);
+  --border-footer: rgba(0, 0, 0, 0.1);
+  --border-chip: rgba(0, 0, 0, 0.18);
+  --border-accent: #1d4ed8;
+  --border-accent-alt: #6d28d9;
+  --border-heading: rgba(29, 78, 216, 0.35);
+
+  --profile-border: rgba(29, 78, 216, 0.5);
+  --profile-glow: rgba(29, 78, 216, 0.2);
+
+  --hero-h1-gradient: linear-gradient(to right, #0f172a, #1e293b);
+
+  --github-filter: invert(1);
+  --icon-color: #0f172a;
+}
+
+/* Material component resets for theme compatibility */
+mat-card {
+  background: var(--bg-card) !important;
+  color: var(--text-body) !important;
+  border: 1px solid var(--border-card) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.3s ease !important;
+}
+
+mat-card-header,
+mat-card-title {
+  color: var(--text-title) !important;
+}
+
+mat-card-subtitle {
+  color: var(--text-muted) !important;
+}
+
+mat-card-content {
+  color: var(--text-body) !important;
+}
+
+/* Navbar button text in both modes */
+.mat-toolbar a.mat-mdc-button {
+  color: var(--text-muted) !important;
+  font-weight: 500 !important;
+  transition: color 0.3s ease, background 0.3s ease !important;
+}
+
+.mat-toolbar a.mat-mdc-button:hover {
+  color: var(--text-title) !important;
+  background: var(--bg-card) !important;
+}
+
+.mat-toolbar a.mat-mdc-button.active {
+  color: var(--text-heading) !important;
+  background: var(--bg-chip-hover) !important;
+}
+
+body.light-mode .nav-brand {
+  background: linear-gradient(135deg, #ea580c, #c2410c, #b45309) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
