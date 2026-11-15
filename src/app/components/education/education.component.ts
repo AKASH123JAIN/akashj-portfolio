@@ -35,6 +35,12 @@ export class EducationComponent {
       issuer: 'GitHub',
       link: 'https://www.credly.com/badges/195ad764-afa5-4bb3-b294-b1cc707c602f',
       logoUrl: 'assets/github-copilot.jpg'
+    },
+    {
+      name: 'Claude Certified',
+      issuer: 'Anthropic',
+      link: 'https://www.credly.com/badges/fc541da5-ff79-4256-80b7-41364abd1dac/linked_in?t=tnxwad',
+      logoUrl: 'assets/claude-certified.jpg'
     }
   ];
 

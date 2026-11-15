@@ -8,41 +8,29 @@
 
 .portfolio-container {
   min-height: 100vh;
-  color: #e0e0e0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
-  transition: all 0.3s ease;
+  transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
 }
 
-.portfolio-container.dark-theme {
-  /* Dark theme adjustments if needed */
-  color: #f0f0f0;
-}
-
 @keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Glassmorphism Utility */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-glass);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-card);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 /* Navbar */
@@ -50,17 +38,18 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.8) !important;
+  background: var(--bg-navbar) !important;
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-navbar);
   padding: 0 1rem;
   height: 70px;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 .nav-brand {
   font-weight: 700;
   font-size: 1.5rem;
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  background: linear-gradient(135deg, #f97316, #fb923c, #fbbf24);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -72,20 +61,25 @@
 }
 
 .navbar a {
-  color: #94a3b8;
+  color: var(--text-muted);
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.3s ease, background 0.3s ease;
   margin: 0 4px;
 
   &:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-title);
+    background: var(--bg-card);
   }
 
   &.active {
-    color: #60a5fa;
-    background: rgba(96, 165, 250, 0.1);
+    color: var(--text-heading);
+    background: var(--bg-chip-hover);
   }
+}
+
+.navbar img[alt="GitHub"] {
+  filter: var(--github-filter);
+  transition: filter 0.4s ease;
 }
 
 /* Hero Section */
@@ -112,14 +106,14 @@
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid rgba(96, 165, 250, 0.5);
-  box-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 4px solid var(--profile-border);
+  box-shadow: 0 0 30px var(--profile-glow);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
   display: block;
 
   &:hover {
     transform: scale(1.08) rotate(2deg);
-    border-color: #a78bfa;
+    border-color: var(--border-accent-alt);
   }
 }
 
@@ -154,26 +148,40 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
-  background: linear-gradient(to right, #fff, #cbd5e1);
+  background: var(--hero-h1-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: background 0.4s ease;
 }
 
 .hero-content p {
   font-size: 1.25rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  transition: color 0.4s ease;
 }
 
 .location {
   font-size: 1rem !important;
-  color: #64748b !important;
+  color: var(--text-dim) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  mat-icon {
+    color: var(--text-dim);
+  }
+}
+
+/* Theme toggle button */
+button[aria-label="Toggle theme"] {
+  .mat-icon {
+    color: var(--icon-color);
+    transition: color 0.4s ease;
+  }
 }
 
 /* Main Content */
@@ -187,10 +195,11 @@ main {
 .footer {
   text-align: center;
   padding: 3rem 1rem;
-  background: rgba(15, 23, 42, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: #64748b;
+  background: var(--bg-footer);
+  border-top: 1px solid var(--border-footer);
+  color: var(--text-dim);
   margin-top: auto;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 /* Animations */
@@ -199,7 +208,6 @@ main {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -207,13 +215,8 @@ main {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Responsive */

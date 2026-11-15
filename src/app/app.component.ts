@@ -25,10 +25,12 @@ import { trigger, transition, style, animate } from '@angular/animations'; // Fo
 })
 export class AppComponent {
   title = 'akash-portfolio';
-  darkMode = false; // For theme toggle
+  darkMode = true; // Default is dark theme
+  currentYear = new Date().getFullYear();
 
   toggleTheme() {
     this.darkMode = !this.darkMode;
+    document.body.classList.toggle('light-mode', !this.darkMode);
   }
 
   handleImageError(event: ErrorEvent) {

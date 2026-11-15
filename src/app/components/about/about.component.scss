@@ -7,14 +7,19 @@
 }
 
 .about-content h2 {
-  color: #60a5fa;
+  color: var(--text-heading);
   margin-bottom: 2rem;
   font-size: 2rem;
+  border-bottom: 2px solid var(--border-heading);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  transition: color 0.3s ease;
 }
 
 p {
-  color: #cbd5e1;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  color: var(--text-body);
+  font-size: 1.15rem;
+  line-height: 1.9;
   margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
 }
